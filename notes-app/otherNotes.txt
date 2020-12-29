@@ -1,0 +1,6 @@
+To user npm modules on own app, we must install it on 
+    our project root. In the case, /notes-app.
+    So .... on console line run:
+        => npm init
+    To install some npm module .....:
+        => npm i nameOfPackage@10.09.02
