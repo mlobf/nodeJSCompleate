@@ -4,3 +4,12 @@ To user npm modules on own app, we must install it on
         => npm init
     To install some npm module .....:
         => npm i nameOfPackage@10.09.02
+
+Other challenge
+    Install and run a new npm package.
+    The name is "Chalk"
+    Install version 2.4.1 of Chalk.
+    Loald chalk on app.
+    Print  "Success" on console with green color.
+    Test your work.
+    Bonus: Use other styles and make the text bold and reversed
