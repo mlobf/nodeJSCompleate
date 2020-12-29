@@ -13,3 +13,7 @@ Other challenge
     Print  "Success" on console with green color.
     Test your work.
     Bonus: Use other styles and make the text bold and reversed
+
+Global npm packages:
+    Just install npm packages ..... nodemon
+    => npm i nodemon -g

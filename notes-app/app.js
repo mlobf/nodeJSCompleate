@@ -8,7 +8,8 @@ const validator = require('validator');
 const print = multiplicacao(2, 5);
 const chalk = require('chalk');
 
-console.log(chalk.green.inverse.bold('Hello My Success!!!'));
+console.log(chalk.green.inverse.bold('This is an error message'));
 //console.log(print);
 //console.log(validator.isEmail('marcos@gmail.com'));
 //console.log(validator.isURL('www.uol.com.br'));
+
