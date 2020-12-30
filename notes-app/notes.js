@@ -21,6 +21,8 @@ const saveNotes = function (notes) {
 };
 
 
+
+
 const loadNotes = function () {
     try {
         const dataBuffer = fs.readFileSync('notes.json');
