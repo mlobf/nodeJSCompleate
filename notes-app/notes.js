@@ -5,17 +5,33 @@ const multiplicacao = function (a, b) {
 };
 
 const addNote = function (title, body) {
-    loadNotes();
+    const notes = loadNotes();
+
+    notes.push({
+        title: title,
+        body: body
+    });
+
+    saveNotes(notes);
 };
+
+const saveNotes = function (notes) {
+    const dataJSON = JSON.stringify(notes);
+    fs.writeFileSync('notes.json', dataJSON);
+};
+
 
 const loadNotes = function () {
-    const dataBuffer = fs.readFileSync('notes.json');
-    const dataJSON = dataBuffer.toString();
-    return JSON.parse(dataJSON);
+    try {
+        const dataBuffer = fs.readFileSync('notes.json');
+        const dataJSON = dataBuffer.toString();
+        return JSON.parse(dataJSON);
+
+    } catch (error) {
+        return [];
+    };
+
 };
-
-
-
 
 
 module.exports = {
