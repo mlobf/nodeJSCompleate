@@ -17,8 +17,15 @@ yargs.version("1.1.0");
 yargs.command({
     command: "add",
     describe: "Add a new note",
-    handler: function () {
-        console.log("Adding a new note");
+    builder: {
+        title: {
+            describe: "Note title",
+            demandOption: true,
+            type: "string",
+        },
+    },
+    handler: function (argv) {
+        console.log("Adding a new note", argv);
     },
 });
 // Create a remove command
@@ -30,10 +37,22 @@ yargs.command({
     },
 });
 
-console.log(yargs.argv);
+yargs.command({
+    command: "list",
+    describe: "Listing all new note",
+    handler: function () {
+        console.log("Now listing all the note");
+    },
+});
 
+//console.log(yargs.argv);
 //console.log(chalk.green.inverse.bold('This is an error message'));
 //console.log(print);
 //console.log(validator.isEmail('marcos@gmail.com'));
 //console.log(validator.isURL('www.uol.com.br'));
 //console.log(process.argv[2]);
+//
+//
+//Challenge => setup command to list
+//Challenge => setup command to read
+yargs.parse();
