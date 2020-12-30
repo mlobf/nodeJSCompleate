@@ -1,11 +1,5 @@
 const fs = require('fs');
 
-/*
-const multiplicacao = function (a, b) {
-    return a * b;
-};
-*/
-
 const addNote = function (title, body) {
 
     const notes = loadNotes();
@@ -21,11 +15,17 @@ const addNote = function (title, body) {
 
         saveNotes(notes);
         console.log('New Note Added!!')
+
     } else {
         console.log('Note title taken!')
     }
 
 };
+
+const removeNote = function (title) {
+    console.log(title)
+};
+
 
 const saveNotes = function (notes) {
 
@@ -34,8 +34,8 @@ const saveNotes = function (notes) {
 
 };
 
-
 const loadNotes = function () {
+
     try {
         const dataBuffer = fs.readFileSync('notes.json');
         const dataJSON = dataBuffer.toString();
@@ -47,7 +47,7 @@ const loadNotes = function () {
 
 };
 
-
 module.exports = {
-    addNote: addNote
+    addNote: addNote,
+    removeNote: removeNote
 };
