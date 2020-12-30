@@ -56,3 +56,5 @@ yargs.command({
 //Challenge => setup command to list
 //Challenge => setup command to read
 yargs.parse();
+
+console.log("teste 123");
