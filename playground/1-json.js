@@ -1,31 +1,46 @@
-const fs = require('fs')
+// Challenge:
+//  Work with JSON and the file system:
+//  
+// Load and parse the JSON file.
+// Change the name and age property using your info
+// Stringify the changed object and overwrite the original data.
+// Test your work by viewing data in JSON file.
+const fs = require('fs');
 
-/*
-const book = {
-    title: 'Ego is the enemy',
-    author: 'Ryan Holliday'
-};
-
-// The JSON.stringify turns book to a json
-const bookJSON = JSON.stringify(book);
-
-/*
-console.log(bookJSON);
-// The JSON.parse turns book to a object
-const parsedData = JSON.parse(bookJSON);
-console.log(parsedData.author);
-*/
-/*
-fs.writeFileSync('1-json.json', bookJSON);
-*/
-// Read the file having the binay data
+console.log("First, to solve the problem..... parsing the data!!");
+console.log(' ');
 const dataBuffer = fs.readFileSync('1-json.json');
-
-// Converting data to a string
+console.log('Convert it to a string');
 const dataJSON = dataBuffer.toString();
+console.log('Now parsing to an object');
+const user = JSON.parse(dataJSON);
+console.log('Next step is change that data!');
 
-// Parsing this dataBuffer on a object;
-const data = JSON.parse(dataJSON);
+user.name = 'Marcos';
+user.age = 39;
+console.log('Now its time to stringfy the object and save it');
 
-// Access it the objects property.
-console.log(data.title);
+const userJSON = JSON.stringify(user);
+fs.writeFileSync('1-json.json', userJSON);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
