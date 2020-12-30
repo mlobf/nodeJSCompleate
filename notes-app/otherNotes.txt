@@ -21,3 +21,9 @@ Global npm packages:
 
 Time to learn yargs
     => yargs is a parsing tools for node.js
+
+Other challenge:
+    => Setup body option for add command.
+    => Configure the description, make it required and for it to be a string.
+    => Log the body value in the handle function.
+    => Test my work. 

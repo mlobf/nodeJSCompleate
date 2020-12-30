@@ -21,13 +21,20 @@ yargs.command({
         title: {
             describe: "Note title",
             demandOption: true,
-            type: "string",
+            type: "string"
+        },
+        body: {
+            describe: "This is a body",
+            demandOption: true,
+            type: "string"
         },
     },
     handler: function (argv) {
-        console.log("Adding a new note", argv);
+        console.log('Title: ' + argv.title),
+        console.log('Body:'+ argv.body )
     },
 });
+
 // Create a remove command
 yargs.command({
     command: "remove",
@@ -56,5 +63,3 @@ yargs.command({
 //Challenge => setup command to list
 //Challenge => setup command to read
 yargs.parse();
-
-console.log("teste 123");
