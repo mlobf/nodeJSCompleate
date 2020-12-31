@@ -2,11 +2,6 @@ const yargs = require("yargs");
 const notes = require('./notes.js');
 const chalk = require("chalk");
 
-// Chalenge on Remove function
-// 1-If the note is removed, print "Note removed!" with green background.
-// 2-If no note is removed, print "No note found!" with red background.
-
-
 // Yargs version with
 yargs.version("1.1.0");
 
