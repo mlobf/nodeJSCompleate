@@ -3,7 +3,6 @@ const chalk = require('chalk')
 
 
 const addNote = function (title, body) {
-
     const notes = loadNotes();
     const duplicateNotes = notes.filter(function (note) {
         return note.title === title;
@@ -27,7 +26,7 @@ const addNote = function (title, body) {
 const removeNote = function (title) {
     const notes = loadNotes();
     const notesToKeep = notes.filter(function (note) {
-        return note.title !== title
+        return note.title !== title;
     })
 
     if (notes.length > notesToKeep.length) {
