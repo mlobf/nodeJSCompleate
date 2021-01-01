@@ -14,7 +14,22 @@ const square = function (x) {
 //};
 // Now the short hand syntax of arrow functions;
 
-const square = (x) => x * x;
+//const square = (x) => x * x;
 
-let quadrado = square(5);
-console.log(quadrado);
+//let quadrado = square(5);
+//console.log(quadrado);
+
+// Now the arrows functions under object s perspective!!
+const evento = {
+    name: 'Birthday Party',
+    guestList: ['Marcos', 'Jen', 'Mike'],
+    printGuestList() {
+        console.log('This is a guest list for ' + this.name)
+
+        this.guestList.forEach((guest) => {
+            console.log(guest + ' is attending ' + this.name)
+        })
+    }
+}
+
+evento.printGuestList()
