@@ -22,16 +22,15 @@ const square = function (x) {
 // Now the arrows functions under object s perspective!!
 const evento = {
     name: 'Birthday Party',
-
-    guestList: ['Marcos', 'Jen', 'Mike'],
+    guestList: ['Marcos', 'Jen', 'Mike', 'Joao','Carlos', 'Vinicios'],
 
     printGuestList() {
-        console.log('This is a guest list for ' + this.name)
+        console.log('This is a guest list for ' + this.name);
 
         this.guestList.forEach((guest) => {
-            console.log(guest + ' is attending ' + this.name)
-        })
+            console.log(guest + ' is attending ' + this.name);
+        });
     }
 }
 
-evento.printGuestList()
+evento.printGuestList();
