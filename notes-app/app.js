@@ -38,13 +38,13 @@ yargs.command({
         },
     },
     handler: function (argv) {
-        notes.removeNote(argv.title)
+        notes.removeNote(argv.title);
     },
 }, );
 
 // Listing Command
 yargs.command({
-    command: "list",
+    command: "listNote",
     describe: "Listing all new note",
     handler: function () {
         console.log("Now listing all the note");

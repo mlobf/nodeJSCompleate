@@ -1,5 +1,5 @@
 const fs = require('fs');
-const chalk = require('chalk')
+const chalk = require('chalk');
 
 
 const addNote = function (title, body) {
@@ -15,10 +15,10 @@ const addNote = function (title, body) {
         });
 
         saveNotes(notes);
-        console.log('New Note Added!!')
+        console.log('New Note Added!!');
 
     } else {
-        console.log('Note title taken!')
+        console.log('Note title taken!');
     }
 
 };
@@ -35,7 +35,12 @@ const removeNote = function (title) {
     } else {
         console.log(chalk.red.inverse("No note found!"))
     }
+};
 
+// Now I will try to make listNote.
+
+const listNote = function (){
+    return console.log("Teste oi meu code !!!");
 };
 
 const saveNotes = function (notes) {
@@ -54,10 +59,10 @@ const loadNotes = function () {
     } catch (error) {
         return [];
     };
-
 };
 
 module.exports = {
     addNote: addNote,
-    removeNote: removeNote
+    removeNote: removeNote,
+    listNote: listNote
 };

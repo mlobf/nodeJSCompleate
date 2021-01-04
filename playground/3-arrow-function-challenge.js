@@ -22,5 +22,5 @@ const tasks = {
     getTasksToDo() {
         console.log('To do until to done !!!' + this.tasks.filter);
     }
-}
-console.log(tasks.getTasksToDo())
+};
+console.log(tasks.getTasksToDo());
