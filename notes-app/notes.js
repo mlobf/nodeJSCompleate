@@ -1,70 +1,61 @@
-const fs = require('fs');
-const chalk = require('chalk');
-
-
-
+const fs = require("fs");
+const chalk = require("chalk");
 
 const addNote = function (title, body) {
-    const notes = loadNotes();
-    const duplicateNotes = notes.filter(function (note) {
-        return note.title === title;
-    })
-    if (duplicateNotes.length === 0) {
+  const notes = loadNotes();
+  const duplicateNotes = notes.filter(function (note) {
+    return note.title === title;
+  });
+  if (duplicateNotes.length === 0) {
+    notes.push({
+      title: title,
+      body: body,
+    });
 
-        notes.push({
-            title: title,
-            body: body
-        });
-
-        saveNotes(notes);
-        console.log('New Note Added!!');
-
-    } else {
-        console.log('Note title taken!');
-    }
-
+    saveNotes(notes);
+    console.log("New Note Added!!");
+  } else {
+    console.log("Note title taken!");
+  }
 };
 
 const removeNote = function (title) {
-    const notes = loadNotes();
-    const notesToKeep = notes.filter(function (note) {
-        return note.title !== title;
-    })
+  const notes = loadNotes();
+  const notesToKeep = notes.filter(function (note) {
+    return note.title !== title;
+  });
 
-    if (notes.length > notesToKeep.length) {
-        console.log(chalk.green.inverse("Note removed!"))
-        saveNotes(notesToKeep)
-    } else {
-        console.log(chalk.red.inverse("No note found!"))
-    }
+  if (notes.length > notesToKeep.length) {
+    console.log(chalk.green.inverse("Note removed!"));
+    saveNotes(notesToKeep);
+  } else {
+    console.log(chalk.red.inverse("No note found!"));
+  }
 };
 
 // Now I will try to make listNote.
 
-const listNote = function (){
-    return console.log("Teste oi meu code !!!");
+const listNote = function () {
+  return console.log("Teste oi meu code !!!");
 };
 
 const saveNotes = function (notes) {
-
-    const dataJSON = JSON.stringify(notes);
-    fs.writeFileSync('notes.json', dataJSON);
+  const dataJSON = JSON.stringify(notes);
+  fs.writeFileSync("notes.json", dataJSON);
 };
 
 const loadNotes = function () {
-
-    try {
-        const dataBuffer = fs.readFileSync('notes.json');
-        const dataJSON = dataBuffer.toString();
-        return JSON.parse(dataJSON);
-
-    } catch (error) {
-        return [];
-    };
+  try {
+    const dataBuffer = fs.readFileSync("notes.json");
+    const dataJSON = dataBuffer.toString();
+    return JSON.parse(dataJSON);
+  } catch (error) {
+    return [];
+  }
 };
 
 module.exports = {
-    addNote: addNote,
-    removeNote: removeNote,
-    listNote: listNote
+  addNote: addNote,
+  removeNote: removeNote,
+  listNote: listNote,
 };
