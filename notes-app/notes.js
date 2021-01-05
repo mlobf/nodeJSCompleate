@@ -2,6 +2,8 @@ const fs = require('fs');
 const chalk = require('chalk');
 
 
+
+
 const addNote = function (title, body) {
     const notes = loadNotes();
     const duplicateNotes = notes.filter(function (note) {
