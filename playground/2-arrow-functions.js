@@ -1,5 +1,5 @@
 // Arrow Functions
-console.log('Using tradicional functions approach');
+console.log("Using tradicional functions approach");
 /* 
 console.log(" Run the script");
 const square = function (x) {
@@ -21,16 +21,34 @@ const square = function (x) {
 
 // Now the arrows functions under object s perspective!!
 const evento = {
-    name: 'Birthday Party',
-    guestList: ['Marcos', 'Jen', 'Mike', 'Joao','Carlos', 'Vinicios'],
+	name: "Birthday Party",
+	guestList: ["Marcos", "Jen", "Mike", "Joao", "Carlos", "Vinicios"],
 
-    printGuestList() {
-        console.log('This is a guest list for ' + this.name);
+	printGuestList() {
+		console.log("This is a guest list for " + this.name);
 
-        this.guestList.forEach((guest) => {
-            console.log(guest + ' is attending ' + this.name);
-        });
-    }
-}
+		this.guestList.forEach((guest) => {
+			console.log(guest + " is attending " + this.name);
+		});
+	},
+};
 
 evento.printGuestList();
+
+console.log(" ");
+console.log(" ");
+console.log(" ");
+
+console.log("++++++++++++++++++++++++++++");
+const square = function (x) {
+	return x + x;
+};
+console.log(square(10));
+
+console.log("++++++++++++++++++++++++++++");
+
+const square1 = (x) => {
+	return x * x;
+};
+
+console.log(square1(5));
