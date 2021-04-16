@@ -1,4 +1,6 @@
 // Arrow Functions
+// Arrow Functions are not great for methods
+
 console.log("Using normal functions approach");
 /* 
 console.log(" Run the script");
@@ -20,6 +22,8 @@ const square = function (x) {
 //console.log(quadrado);
 
 // Now the arrows functions under object s perspective!!
+
+/*
 const evento = {
 	name: "Birthday Party",
 	guestList: ["Marcos", "Jen", "Mike", "Joao", "Carlos", "Vinicios"],
@@ -58,3 +62,27 @@ console.log("++++++++++++++++++++++++++++");
 const square2 = (x) => x * x;
 
 console.log(square2(99));
+*/
+
+// Recovering
+
+//const square = (num) => {
+//	return num * num;
+//};
+
+const square = (num) => num * num;
+
+const event = {
+	name: "Bday Party",
+	guestList: ["Marcos", "Lin", "Caio", "Carlos"],
+	printGuestList() {
+		console.log("Guest list for " + this.name);
+		this.guestList.forEach((guest) => {
+			console.log(guest + " is attending " + this.name);
+		});
+	},
+};
+
+event.printGuestList();
+
+console.log(square(2));
