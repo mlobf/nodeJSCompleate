@@ -1,5 +1,5 @@
 // Arrow Functions
-console.log("Using tradicional functions approach");
+console.log("Using normal functions approach");
 /* 
 console.log(" Run the script");
 const square = function (x) {
@@ -43,7 +43,7 @@ console.log("++++++++++++++++++++++++++++");
 const square = function (x) {
 	return x + x;
 };
-console.log(square(10));
+console.log(square(100));
 
 console.log("++++++++++++++++++++++++++++");
 
@@ -51,4 +51,10 @@ const square1 = (x) => {
 	return x * x;
 };
 
-console.log(square1(5));
+console.log(square1(8));
+
+console.log("++++++++++++++++++++++++++++");
+
+const square2 = (x) => x * x;
+
+console.log(square2(99));

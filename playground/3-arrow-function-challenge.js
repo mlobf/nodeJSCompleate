@@ -1,6 +1,6 @@
-// This will be a challenge 
+// This will be a challenge
 console.log("Its challenge time!!!");
-console.log('');
+console.log("");
 //
 // Goal: Create method to get incomplete tasks
 //
@@ -9,18 +9,23 @@ console.log('');
 // 3. Test your work by running the script
 
 const tasks = {
-    tasks: [{
-        text: 'Grocery shopping',
-        completed: true
-    }, {
-        text: 'Clean yard',
-        completed: false
-    }, {
-        text: 'Film course',
-        completed: false
-    }],
-    getTasksToDo() {
-        console.log('To do until to done !!!' + this.tasks.filter);
-    }
+	tasks: [
+		{
+			text: "Grocery shopping",
+			completed: true,
+		},
+		{
+			text: "Clean yard",
+			completed: false,
+		},
+		{
+			text: "Film course",
+			completed: false,
+		},
+	],
+	getTasksToDo() {
+		console.log("To do until to done !!!" + this.tasks.filter);
+	},
 };
+
 console.log(tasks.getTasksToDo());
