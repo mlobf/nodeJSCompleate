@@ -1,4 +1,5 @@
 "use strict";
+
 const request = require("request");
 
 const urlApiMap =
@@ -6,16 +7,22 @@ const urlApiMap =
 
 request({ url: urlApiMap, json: true }, (error, response) => {
 	const arrCity = [];
-	let cityName = response.body.features[0]["text"];
-	let coordinates = response.body.features[0]["geometry"].coordinates;
-	arrCity.push(cityName, coordinates);
-	// My variable is arrCity
-	let lat = arrCity[1][0];
-	let lon = arrCity[1][1];
-	console.log(lat, lon);
+
+	if (error) {
+		console.log("Unable to connect to weather service");
+	} else {
+		let cityName = response.body.features[0]["text"];
+		let coordinates = response.body.features[0]["geometry"].coordinates;
+
+		arrCity.push(cityName, coordinates);
+		// My variable is arrCity
+		let lat = arrCity[1][0];
+		let lon = arrCity[1][1];
+
+		//console.log(lat, lon);
+	}
 });
 
-/*
 // WEATHER STACK
 const urlWeatherStack =
 	"http://api.weatherstack.com/current?access_key=be0d617236c0e7dd1c5bb4bd097fa5fd&&query=37.8267,-122.4233";
@@ -24,11 +31,9 @@ const position = urlWeatherStack.indexOf("query=");
 const newPartialUrlWeather = urlWeatherStack.slice(0, position + 6);
 //console.log(`${newPartialUrlWeather}${lon},${lat}`);
 const finalUrlWeather = newPartialUrlWeather + lon + lat;
-console.log(finalUrlWeather);
-*/
-/*
-request({ url: url, json: true }, (error, response) => {
-  let temperature = response.body.current["temperature"];
+
+request({ url: finalUrlWeather, json: true }, (error, response) => {
+	let temperature = response.body.current["temperature"];
 	let precip = response.body.current["precip"];
 	let cloudcover = response.body.current["cloudcover"];
 
@@ -36,7 +41,6 @@ request({ url: url, json: true }, (error, response) => {
 		`Its currently ${temperature} with ${precip} % chance of rain and a cloudcouver of ${cloudcover}`
 	);
 });
-*/
 
 // Add a new GeoCoding service to serve or url with a customize application.
 // To serve us I will user the mapBox to provide the correct Lat ant Long .
