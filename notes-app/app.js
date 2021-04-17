@@ -2,6 +2,13 @@ const yargs = require("yargs");
 const notes = require("./notes.js");
 //const chalk = require("chalk");
 
+/*
+	Goal Refactor all functions
+	1-If the function is a method, user the ES6 method definition syntax.
+	2-Use the more concise way, arrow function aka.
+	3-Test your work.
+*/
+
 // Yargs version with
 yargs.version("1.1.0");
 
